@@ -15,7 +15,7 @@ def result():
 	if request.form['guess'] == session['number']:
 		answer = "Correct"
 		return render_template("index.html", answer=answer)
-	elif request.form['guess'] > session['number']:
+	elif int(request.form['guess']) < session['number']:
 		answer = "Too Low"
 		return render_template("index.html", answer=answer)
 	else:
